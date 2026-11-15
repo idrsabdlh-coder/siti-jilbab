@@ -1,10 +1,29 @@
 import tailwindcss from '@tailwindcss/vite';
+import fs from 'fs';
 import path from 'path';
-import {defineConfig} from 'vite';
+import {defineConfig, type Plugin} from 'vite';
+
+// Skrip klasik (<script src>) dan data JSON tidak dibundel Vite, jadi salin apa adanya ke dist.
+function copyStatic(dirs: string[]): Plugin {
+  return {
+    name: 'copy-static',
+    apply: 'build',
+    closeBundle() {
+      for (const dir of dirs) {
+        const from = path.resolve(__dirname, dir);
+        if (fs.existsSync(from)) {
+          fs.cpSync(from, path.resolve(__dirname, 'dist', dir), {recursive: true});
+        }
+      }
+    },
+  };
+}
 
 export default defineConfig(() => {
   return {
-    plugins: [tailwindcss()],
+    // Path relatif agar situs jalan di sub-folder GitHub Pages (/siti-jilbab/) maupun domain sendiri.
+    base: './',
+    plugins: [tailwindcss(), copyStatic(['data', 'assets/js', 'assets/images'])],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

@@ -1,104 +1,175 @@
-# Siti Jilbab — Katalog Hijab Premium Digital
+<div align="center">
 
-Katalog Digital Premium untuk **Siti Jilbab** yang berlokasi di Pasar Unit 2, Tulang Bawang, Lampung. Berkonsep elegan, modest, bersih, dan mengusung nilai-nilai keislaman yang anggun tanpa berlebihan.
+# 🧕 Siti Jilbab
 
-Website ini dirancang sebagai katalog statis fungsional modern. Pelanggan dapat menyaring kategori hijab, memilih varian warna khusus secara visual, mencari model tertentu, lalu mengklik tombol pemesanan untuk langsung mengirimkan pesan berisi rincian barang pilihan ke WhatsApp pemilik toko secara otomatis.
+### *Anggun dalam kesederhanaan. Modest tanpa berlebihan.*
+
+Katalog hijab premium digital dari **Pasar Unit 2, Tulang Bawang, Lampung**,
+dari layar ke tangan pembeli hanya dengan satu ketukan WhatsApp.
+
+[![Live](https://img.shields.io/badge/🌐_Live-GitHub_Pages-1f6f5c?style=for-the-badge)](https://idrsabdlh-coder.github.io/siti-jilbab/)
+[![Vite](https://img.shields.io/badge/Vite-Build-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind](https://img.shields.io/badge/Tailwind-v4-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![WhatsApp](https://img.shields.io/badge/Order_via-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6282372526773)
+
+[🛍️ Lihat Katalog](https://idrsabdlh-coder.github.io/siti-jilbab/) · [📋 PRD](./PRD.md) · [✅ TODO](./TODO.md)
+
+</div>
 
 ---
 
-## 🛠️ Tech Stack & Spesifikasi
+## ✨ Cerita Singkat
 
-- **Bahasa Utama**: HTML5, Vanilla JavaScript (ES6+), CSS3 kustom.
-- **Engine Compiler**: [Vite.js](https://vitejs.dev/) untuk kompilasi modul statis Multi-Page Application (MPA) di dalam aset folder `dist/`.
-- **Framework Styling**: [Tailwind CSS v4](https://tailwindcss.com/) terintegrasi langsung di dalam berkas global.
-- **Desain Font**: Display menggunakan **Cormorant Garamond** (Google Fonts) & Body menggunakan **DM Sans** (Google Fonts).
-- **Kapasitas Database**: Data statis berbasis file `/data/products.json` yang di-fetch secara asynchronous klien secara langsung.
-- **Integrasi WhatsApp**: Automasi pesan dinamis (Link Builder) menggunakan skema URL `wa.me` berkode UTF-8.
+Bayangkan seorang pelanggan sedang santai di rumah. Ia membuka katalog, memilih **Voal Ultra Fine** warna **Dusty Rose**, lalu menekan satu tombol. WhatsApp terbuka dan pesan pesanan sudah tertulis rapi, tinggal dikirim.
 
----
+Tidak ada keranjang yang rumit, tidak ada aplikasi tambahan, dan tidak ada tanya-jawab panjang soal "yang warna apa tadi ya?". Itulah **Siti Jilbab**: katalog yang cantik di mata, ringan di ponsel, dan akrab seperti ngobrol dengan penjualnya.
 
-## 📂 Struktur Folder Proyek
+## 🌸 Apa yang Bisa Dilakukan Pelanggan?
+
+| | Fitur | Rasanya seperti... |
+|---|---|---|
+| 🔍 | **Cari model** | Mengetik "voal" dan hasilnya langsung muncul |
+| 🗂️ | **Filter kategori** | Berjalan di lorong toko, tapi hanya ke rak yang diinginkan |
+| 🎨 | **Pilih varian warna** | Memegang kain dan memilih warna favorit |
+| 🖼️ | **Galeri foto produk** | Melihat dari berbagai sisi sebelum memutuskan |
+| 💬 | **Pesan lewat WhatsApp** | Satu klik, pesan siap kirim ke pemilik toko |
+| 📍 | **Info toko lengkap** | Alamat, jam buka, dan peta tanpa tanya-tanya |
+
+## 🎨 Nuansa Desain
+
+Elegan, bersih, dan teduh.
+
+- **Display:** *Cormorant Garamond*, klasik dan berkelas untuk judul
+- **Body:** *DM Sans*, modern dan nyaman dibaca
+- **Gaya:** modest, lapang, dengan animasi halus yang tidak berisik
+
+## 🧰 Dapur Teknis
+
+| Lapisan | Pilihan |
+|---|---|
+| Bahasa | HTML5 · Vanilla JavaScript (ES6+) · CSS3 |
+| Bundler | **Vite.js** (Multi-Page Application, output ke `dist/`) |
+| Styling | **Tailwind CSS v4** |
+| Data | `data/products.json` (di-fetch secara async di sisi klien) |
+| Pemesanan | Link builder `wa.me` dengan encoding UTF-8 |
+| Hosting | **GitHub Pages** (deploy otomatis via GitHub Actions) |
+
+> 💡 **Kenapa tanpa backend?** Toko kecil butuh sesuatu yang murah, cepat, dan mudah dirawat. Data cukup satu file JSON, hosting gratis, dan tidak ada server yang perlu dijaga.
+
+## 🗺️ Peta Proyek
 
 ```text
 siti-jilbab/
-├── data/
-│   └── products.json         → Dataset list katalog jilbab utama
-├── assets/
-│   ├── css/
-│   │   └── style.css         → CSS utama, resets, variabel, & animasi kustom
+├── 📦 data/
+│   └── products.json        # Etalase: seluruh produk hijab
+├── 🎀 assets/
+│   ├── css/style.css        # Variabel, reset, animasi kustom
 │   └── js/
-│       ├── main.js           → Komponen global (Nav, Footer, Floating WA, SEO, Toasts, dll.)
-│       ├── katalog.js        → Filter multi-faceted, search bar, & pagination
-│       └── produk.js         → Gallery switcher, swatch listener, & WA URL builder
-├── berkas statis & pages/
-│   ├── index.html            → Halaman Beranda (Homepage)
-│   ├── katalog.html          → Halaman katalog interaktif & filter
-│   ├── tentang.html          → Halaman bercerita sejarah & misi brand
-│   ├── kontak.html           → Halaman alamat, jam buka, maps, dsb.
-│   └── produk/
-│       └── detail.html       → Detail model hijab (membaca ?slug=)
-├── vercel.json               → Aturan SEO routing Vercel Clean URLs
-├── robots.txt                → Kebijakan crawling search engine
-└── sitemap.xml               → Map link halaman statis untuk SEO indexer
+│       ├── main.js          # Nav, Footer, Floating WA, SEO, Toast
+│       ├── katalog.js       # Filter multi-faset, pencarian, pagination
+│       └── produk.js        # Galeri, swatch warna, pembuat link WA
+├── 🏠 index.html            # Beranda
+├── 🛍️ katalog.html          # Katalog interaktif
+├── 📖 tentang.html          # Kisah & misi brand
+├── 📞 kontak.html           # Alamat, jam buka, peta
+├── 🔎 produk/detail.html    # Detail model (?slug=...)
+├── ⚙️ .github/workflows/
+│   └── deploy.yml           # Deploy otomatis ke GitHub Pages
+├── 🤖 robots.txt
+└── 🗺️ sitemap.xml
 ```
 
----
+## 🚀 Coba Sekarang dalam 60 Detik
 
-## 🚀 Panduan Menjalankan Secara Lokal
-
-Situs ini menggunakan Vite.js sebagai bundler. Anda dapat dengan mudah menjalankan mode development atau memproduksi versi terkompilasi bersih menggunakan baris instruksi berikut:
-
-### 1. Jalankan Mode Developer (Sandbox Run)
-Buka terminal Anda di direktori utama proyek, lalu jalankan perintah:
 ```bash
+git clone https://github.com/idrsabdlh-coder/siti-jilbab.git
+cd siti-jilbab
+npm install
 npm run dev
 ```
-Vite akan menyalakan server lokal yang secara instan dapat Anda akses langsung melalui browser pada alamat default `http://localhost:3000/`.
 
-### 2. Membangun Berkas Produksi (Build Compilation)
-Untuk mem-build seluruh berkas HTML, CSS, dan JS statis yang siap dideploy menjadi satu folder produksi mandiri `/dist`:
+Buka **http://localhost:3000/** dan katalog sudah berjalan.
+
+Untuk membuat versi produksi:
+
 ```bash
-npm run build
+npm run build     # hasil siap deploy ada di /dist
 ```
-Seluruh halaman dinamis, file json, sitemap, dan vercel routing akan dipasangkan ke dalam folder `/dist` secara otomatis oleh Rollup Engine.
 
----
+## ☁️ Rilis ke Dunia (GitHub Pages)
 
-## ☁️ Petunjuk Deployment
+Situs terbit otomatis setiap kali ada `push` ke branch `main`, tanpa layanan tambahan.
 
-### Opsi A: Menggunakan Vercel (Direkomendasikan)
-1. Buat akun gratis di [Vercel](https://vercel.com).
-2. Install Vercel CLI di komputer Anda (`npm i -g vercel`), jalankan perintah `vercel` di terminal dan ikuti petunjuknya.
-3. *Atau*, Anda dapat menghubungkan repositori GitHub Anda secara langsung ke dasbor Vercel untuk deployment otomatis setiap push.
+**Setup sekali saja:**
 
-### Opsi B: Menggunakan Netlify
-1. Masuk ke [Netlify](https://netlify.com).
-2. Hubungkan repositori atau tarik langsung isi folder `/dist` hasil kompilasi Anda ke dalam kotak upload Netlify.
+1. Buka repo di GitHub → **Settings → Pages**.
+2. Pada **Source**, pilih **GitHub Actions**.
+3. `vite.config.ts` sudah memakai `base: './'` (path relatif), jadi tidak perlu diubah.
+4. `git push` ke `main`, lalu pantau di tab **Actions**.
 
----
+Alamat situs: **https://idrsabdlh-coder.github.io/siti-jilbab/**
 
-## ✍️ Cara Memperbarui Konten Toko
+> 💡 Skrip di `assets/js/`, `data/`, dan `assets/images/` disalin ke `dist/` oleh plugin kecil di `vite.config.ts`, karena Vite tidak membundel skrip klasik. Tulis gambar lokal di `products.json` sebagai `assets/images/nama.jpg`; path-nya otomatis disesuaikan untuk halaman biasa maupun `produk/`.
 
-### 1. Menambah / Mengubah Data Produk Hijab
-Segala perubahan data produk dapat dilakukan langsung di dalam file `/data/products.json`. Pastikan skema data sesuai dengan format berikut:
+## 🧵 Merawat Isi Toko
+
+### 1. Menambah atau mengubah produk
+
+Cukup edit `data/products.json`, tidak perlu menyentuh kode:
+
 ```json
 {
   "id": "p001",
-  ... (id unik berikutnya dsb.)
   "slug": "voal-ultra-fine",
   "name": "Voal Ultra Fine",
   "category": "voal",
   "price": 85000,
   "colors": ["Cream", "Navy", "Dusty Rose"],
   "material": "Voal Superfine",
-  "description": "2-3 kalimat deskripsi yang menawan dan natural di sini.",
-  "images": ["Tautan link gambar atau aset lokal di sini"],
+  "description": "Deskripsi 2-3 kalimat yang menawan dan natural.",
+  "images": ["assets/img/voal-ultra-fine-1.jpg"],
   "badge": "baru",
   "inStock": true
 }
 ```
 
-### 2. Memperbarui Nomor Tujuan WhatsApp Toko
-Nomor WhatsApp toko default yang dipasang adalah **`+62 823-7252-6773`** milik Siti Jilbab Tulang Bawang. Jika ingin mengubah nomor tujuan:
-1. Buka teks editor Anda, lalu lakukan pencarian global (Global Search) untuk nilai: `6282372526773`.
-2. Ganti angka tersebut dengan nomor baru Anda. Pastikan menggunakan format nomor internasional tanpa tanda tambah (`+`) atau spasi, contoh: `6281234567890`.
+> ✅ **Tips:** `id` dan `slug` harus unik. Pakai huruf kecil dan tanda hubung untuk `slug`.
+
+### 2. Mengganti nomor WhatsApp toko
+
+Nomor saat ini adalah **+62 823-7252-6773**. Untuk menggantinya:
+
+1. Cari global `6282372526773` di editor Anda.
+2. Ganti dengan nomor baru dalam format internasional **tanpa `+` dan tanpa spasi**, misalnya `6281234567890`.
+
+## 🧭 Arah Pengembangan
+
+Dokumen perencanaan proyek ini ada di:
+
+- 📋 **[PRD.md](./PRD.md)**: visi, target pengguna, kebutuhan produk, dan ukuran keberhasilan
+- ✅ **[TODO.md](./TODO.md)**: daftar pekerjaan bertahap, dari yang paling mendesak
+
+## 🤝 Berkontribusi
+
+```bash
+git checkout -b fitur/nama-fitur
+# ...kerjakan perubahan...
+git commit -m "feat: deskripsi singkat"
+git push origin fitur/nama-fitur
+```
+
+Lalu buka Pull Request. Gunakan awalan `feat:`, `fix:`, `docs:`, atau `chore:` pada pesan commit agar riwayat tetap rapi.
+
+## 📍 Kunjungi Tokonya
+
+**Siti Jilbab**
+Pasar Unit 2, Tulang Bawang, Lampung
+💬 WhatsApp: [+62 823-7252-6773](https://wa.me/6282372526773)
+
+---
+
+<div align="center">
+
+*Dibuat dengan ❤️ untuk setiap kerudung yang membuat pemakainya merasa percaya diri.*
+
+</div>

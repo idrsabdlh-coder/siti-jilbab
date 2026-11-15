@@ -40,7 +40,7 @@ async function loadProducts() {
     const response = await fetch('./data/products.json');
     if (!response.ok) throw new Error('Failed to fetch resource products.json');
 
-    state.products = await response.json();
+    state.products = window.resolveProducts(await response.json());
     state.filtered = [...state.products];
 
     buildColorSwatches();

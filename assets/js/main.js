@@ -9,6 +9,14 @@ const getPathPrefix = () => {
   return isSubfolder ? '../' : './';
 };
 
+// Ubah path gambar lokal (mis. "assets/images/x.jpg") agar benar dari halaman biasa maupun /produk/
+window.resolveProducts = (list) => list.map((p) => ({
+  ...p,
+  images: (p.images || []).map((src) =>
+    /^(https?:)?\/\/|^data:/.test(src) ? src : getPathPrefix() + src.replace(/^\.?\//, '')
+  ),
+}));
+
 // 1. Render Navbar component dynamically
 window.renderNav = (activePage) => {
   const placeholder = document.getElementById('nav-placeholder');

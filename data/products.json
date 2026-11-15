@@ -8,7 +8,7 @@
     "colors": ["Cream", "Navy", "Dusty Rose", "Sage", "Hitam"],
     "material": "Voal Ultra Fine Grade A",
     "description": "Hijab segi empat voal ultra fine dengan serat kain super rapat, tegak sempurna di dahi, serta sangat breathable. Nyaman digunakan sepanjang hari untuk acara formal maupun harian.",
-    "images": ["https://placehold.co/400x500/C88EA7/ffffff?text=Voal+Ultra+Fine"],
+    "images": ["assets/images/voal-ultra-fine.jpg"],
     "badge": "baru",
     "inStock": true
   },
@@ -21,7 +21,7 @@
     "colors": ["Cream", "Dusty Rose", "Sage", "Abu-abu", "Cokelat"],
     "material": "Voal Superfine",
     "description": "Voal premium bertekstur lembut dengan finishing pinggiran laser cut yang mewah, presisi, dan rapi. Pilihan tepat untuk look yang bersih, anggun, dan profesional.",
-    "images": ["https://placehold.co/400x500/7A2E39/ffffff?text=Voal+Laser+Cut"],
+    "images": ["assets/images/voal-laser-cut.jpg"],
     "badge": "terlaris",
     "inStock": true
   },

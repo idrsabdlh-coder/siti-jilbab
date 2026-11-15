@@ -136,7 +136,7 @@ function renderProductInfo(product) {
 
     <!-- Specification table lists -->
     <div class="text-sm space-y-2 text-stone-600">
-      <p><span class="font-bold text-text-charcoal w-24 inline-block">Bahan / Material:</span> ${product.material}</p>
+      <p><span class="font-bold text-text-charcoal w-24 inline-block">Bahan:</span> ${product.material}</p>
       <p><span class="font-bold text-text-charcoal w-24 inline-block">Kategori:</span> <span class="capitalize">${product.category}</span></p>
     </div>
 
@@ -255,9 +255,19 @@ function renderRelated(products, currentProduct) {
   if (!relatedGrid) return;
 
   // Sieve products of same category minus current model up to 4 items max
-  const related = products
+  let related = products
     .filter(p => p.category.toLowerCase() === currentProduct.category.toLowerCase() && p.id !== currentProduct.id)
     .slice(0, 4);
+
+  // Jika produk sekategori kurang dari 4, lengkapi dengan kategori lain agar bagian ini tidak kosong
+  let mixed = false;
+  if (related.length < 4) {
+    const extra = products
+      .filter(p => p.id !== currentProduct.id && !related.some(r => r.id === p.id))
+      .slice(0, 4 - related.length);
+    mixed = extra.length > 0;
+    related = related.concat(extra);
+  }
 
   if (related.length === 0) {
     relatedGrid.innerHTML = '';
@@ -266,7 +276,9 @@ function renderRelated(products, currentProduct) {
   }
 
   if (title) {
-    title.innerText = `Koleksi ${currentProduct.category.charAt(0).toUpperCase() + currentProduct.category.slice(1)} Lainnya`;
+    title.innerText = mixed
+      ? 'Koleksi Jilbab Lainnya'
+      : `Koleksi ${currentProduct.category.charAt(0).toUpperCase() + currentProduct.category.slice(1)} Lainnya`;
   }
 
   relatedGrid.innerHTML = related.map(p => {
@@ -314,7 +326,7 @@ async function init() {
     const res = await fetch('../data/products.json');
     if (!res.ok) throw new Error('Data endpoint load failed');
 
-    const products = await res.json();
+    const products = window.resolveProducts(await res.json());
     const product = products.find(p => p.slug === slug);
 
     if (!product) {

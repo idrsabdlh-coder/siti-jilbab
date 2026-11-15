@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog Hijab — Siti Jilbab Tulang Bawang</title>
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="bg-bg-cream text-text-charcoal flex flex-col min-h-screen">
+    
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <!-- MINI HERO / HEADER -->
+    <section class="pt-32 pb-12 bg-gradient-to-br from-[#7A2E39]/5 to-transparent border-b border-primary-burgundy/5">
+      <div class="container text-center flex flex-col gap-3">
+        <!-- Breadcrumbs -->
+        <nav class="text-xs text-stone-500 font-medium tracking-wide">
+          <a href="./index.html" class="hover:text-primary-burgundy transition-colors">Beranda</a>
+          <span class="mx-2 text-stone-300">&rsaquo;</span>
+          <span class="text-primary-burgundy">Katalog</span>
+        </nav>
+        <h1 class="text-4xl font-bold text-text-charcoal mt-2">Katalog Koleksi Jilbab</h1>
+        <p class="text-stone-500 text-sm max-w-md mx-auto">Temukan kesempurnaan dalam kesederhanaan dengan pashmina, voal, dan khimar berkualitas prima.</p>
+      </div>
+    </section>
+
+    <!-- CATALOG MAIN WORKSPACE -->
+    <main class="section-padding py-12 flex-grow">
+      <div class="container grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- SIDEBAR FILTER SYSTEM (Desktop-width) -->
+        <aside class="lg:col-span-3 flex flex-col gap-8 bg-white p-6 rounded-2xl border border-primary-burgundy/10 shadow-sm h-fit">
+          
+          <!-- Search System -->
+          <div class="flex flex-col gap-2">
+            <label for="search-input" class="text-xs font-bold uppercase tracking-wider text-text-charcoal/80">Cari Hijab</label>
+            <div class="relative">
+              <input type="text" 
+                     id="search-input" 
+                     placeholder="Nama atau jenis hijab..." 
+                     class="w-full text-sm px-4 py-2.5 rounded-full border border-stone-200 focus:outline-none focus:border-primary-burgundy bg-bg-cream/40" />
+              <span class="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 text-sm">🔍</span>
+            </div>
+          </div>
+
+          <!-- Kategori Filter Chips -->
+          <div class="flex flex-col gap-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-text-charcoal/80">Kategori Hijab</span>
+            <div id="filter-kategori" class="flex flex-wrap gap-2">
+              <button data-kategori="semua" class="tag-chip active">Semua</button>
+              <button data-kategori="voal" class="tag-chip">Voal</button>
+              <button data-kategori="pashmina" class="tag-chip">Pashmina</button>
+              <button data-kategori="jersey" class="tag-chip">Jersey</button>
+              <button data-kategori="bergo" class="tag-chip">Bergo</button>
+              <button data-kategori="khimar" class="tag-chip">Khimar</button>
+            </div>
+          </div>
+
+          <!-- Warna Swatches -->
+          <div class="flex flex-col gap-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-text-charcoal/80">Varian Warna</span>
+            <div id="filter-warna" class="flex flex-wrap gap-2.5 items-center">
+              <!-- Swatches will be generated dynamically by katalog.js -->
+            </div>
+          </div>
+
+          <!-- Rentang Harga Options -->
+          <div class="flex flex-col gap-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-text-charcoal/80">Rentang Harga</span>
+            <div id="filter-harga" class="flex flex-col gap-1.5 align-start">
+              <button data-harga="semua" class="text-left font-medium text-sm text-stone-600 hover:text-primary-burgundy py-1 px-2.5 rounded-lg active-link">Semua Harga</button>
+              <button data-harga="under-50" class="text-left font-medium text-sm text-stone-600 hover:text-primary-burgundy py-1 px-2.5 rounded-lg">Di bawah Rp 50.000</button>
+              <button data-harga="50-100" class="text-left font-medium text-sm text-stone-600 hover:text-primary-burgundy py-1 px-2.5 rounded-lg">Rp 50.000 - Rp 100.000</button>
+              <button data-harga="100-200" class="text-left font-medium text-sm text-stone-600 hover:text-primary-burgundy py-1 px-2.5 rounded-lg">Rp 100.000 - Rp 200.000</button>
+              <button data-harga="over-200" class="text-left font-medium text-sm text-stone-600 hover:text-primary-burgundy py-1 px-2.5 rounded-lg">Di atas Rp 200.000</button>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- MAIN PRODUCTS CONTAINER -->
+        <section class="lg:col-span-9 flex flex-col gap-6">
+          <!-- Counter text -->
+          <div class="flex justify-between items-center bg-white py-3 px-6 rounded-xl border border-primary-burgundy/5">
+            <p id="hasil-count" class="text-stone-500 text-xs sm:text-sm font-medium">Bekerja keras menyelaraskan katalog...</p>
+          </div>
+
+          <!-- Products Grid -->
+          <div id="products-grid" class="product-grid my-0"></div>
+
+          <!-- Empty State -->
+          <div id="empty-state" class="flex flex-col items-center justify-center gap-4 py-20 text-center bg-white rounded-3xl border border-stone-100 shadow-sm" style="display-none">
+            <span class="text-5xl">😔</span>
+            <h3 class="text-xl font-bold text-text-charcoal">Jilbab Tidak Ditemukan</h3>
+            <p class="text-stone-500 text-sm max-w-sm">Maaf, kami tidak menemukan model atau kombinasi hijab yang Anda cari. Coba ubah pencarian atau bersihkan filter warna.</p>
+            <button id="clear-filters-btn" class="btn-primary btn-sm mt-3">Bersihkan Filter</button>
+          </div>
+
+          <!-- Pagination UI Container -->
+          <div id="pagination" class="flex justify-center items-center gap-2 mt-8 py-4"></div>
+
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Style Override specifically for filters -->
+    <style>
+      .tag-chip {
+        background-color: var(--cream);
+        border: 1px solid rgba(122, 46, 57, 0.1);
+        padding: 0.45rem 1rem;
+        border-radius: 50px;
+        font-size: 0.775rem;
+        font-weight: 500;
+        color: var(--charcoal);
+        transition: all 0.2s ease;
+      }
+      .tag-chip:hover {
+        background-color: var(--burgundy);
+        color: white;
+        border-color: var(--burgundy);
+      }
+      .tag-chip.active {
+        background-color: var(--burgundy);
+        color: white;
+        border-color: var(--burgundy);
+        font-weight: 600;
+      }
+      
+      .color-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: inline-block;
+        border: 1.5px solid rgba(43, 38, 38, 0.15);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        position: relative;
+      }
+      .color-dot:hover {
+        transform: scale(1.15);
+      }
+      .color-dot.active {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--burgundy);
+      }
+      .color-dot-tooltip {
+        position: absolute;
+        bottom: 115%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--charcoal);
+        color: #ffffff;
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 100;
+      }
+      .color-dot:hover .color-dot-tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .active-link {
+        background-color: rgba(122, 46, 57, 0.08);
+        color: var(--burgundy) !important;
+        font-weight: 600 !important;
+      }
+
+      .page-btn {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(43, 38, 38, 0.1);
+        color: var(--charcoal);
+        transition: all 0.3s ease;
+      }
+      .page-btn:hover {
+        border-color: var(--burgundy);
+        color: var(--burgundy);
+      }
+      .page-btn.active {
+        background-color: var(--burgundy);
+        color: #ffffff;
+        border-color: var(--burgundy);
+      }
+      .page-nav-btn {
+        padding: 0 1rem;
+        height: 38px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        border: 1px solid rgba(43, 38, 38, 0.1);
+        color: var(--charcoal);
+      }
+      .page-nav-btn:hover:not(:disabled) {
+        border-color: var(--burgundy);
+        color: var(--burgundy);
+      }
+      .page-nav-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+    </style>
+
+    <!-- Scripts loaded -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/katalog.js"></script>
+    <script>
+      // Load layouts
+      renderNav('katalog');
+      renderFooter();
+    </script>
+  </body>
+</html>

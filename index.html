@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siti Jilbab — Toko Hijab Premium di Tulang Bawang</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="bg-bg-cream text-text-charcoal leading-relaxed">
+    
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <!-- 1. HERO SECTION -->
+    <section class="min-h-screen flex items-center pt-24 pb-12 relative overflow-hidden" 
+             style="background: radial-gradient(circle at 90% 10%, rgba(200, 142, 167, 0.18), transparent 45%), radial-gradient(circle at 10% 90%, rgba(230, 185, 129, 0.15), transparent 45%);">
+      
+      <!-- Natural Tones Decorative Circles & Arches -->
+      <div class="absolute right-[-100px] top-1/4 w-[500px] h-[500px] pointer-events-none select-none z-0">
+        <div class="w-full h-full bg-[#C88EA7] opacity-10 rounded-full blur-3xl"></div>
+      </div>
+      <div class="absolute right-10 top-1/3 w-[300px] h-[450px] rounded-t-full border-[15px] border-primary-burgundy opacity-5 pointer-events-none select-none z-0 hidden lg:block"></div>
+
+      <div class="container grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <!-- Text Hero Content -->
+        <div class="lg:col-span-7 flex flex-col gap-6 text-left max-w-2xl">
+          <span style="animation: fadeUp 1s ease forwards; letter-spacing: 0.25em;" 
+                class="text-xs uppercase font-bold tracking-widest text-[#C88EA7] inline-block opacity-0">
+            ✦ Premium Hijab Store ✦
+          </span>
+          <h1 style="animation: fadeUp 1s ease 0.2s forwards; line-height: 1.15;" class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-text-charcoal opacity-0">
+            Koleksi Hijab <br />
+            <span class="bg-gradient-to-r from-primary-burgundy to-secondary-rose bg-clip-text text-transparent font-serif italic font-light">Eksklusif & Nyaman</span>
+          </h1>
+          <p style="animation: fadeUp 1s ease 0.3s forwards;" class="text-accent-gold text-lg font-serif italic font-medium opacity-0">
+            "Ketaatan dalam Keanggunan"
+          </p>
+          <p style="animation: fadeUp 1s ease 0.4s forwards;" class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-lg opacity-0">
+            Hadir dengan puluhan pilihan warna anggun dan material terbaik kelas butik. Dibuat istimewa untuk menunjang aktivitas muslimah modern di Pasar Unit 2, Tulang Bawang, Lampung.
+          </p>
+          <div style="animation: fadeUp 1s ease 0.5s forwards;" class="flex flex-wrap gap-4 mt-2 opacity-0">
+            <a href="./katalog.html" class="btn-primary">Lihat Katalog</a>
+            <a href="./tentang.html" class="btn-secondary">Tentang Kami</a>
+          </div>
+        </div>
+        
+        <!-- Hero Decorative Image Spot -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end" style="animation: fadeUp 1.2s ease 0.6s forwards; opacity: 0;">
+          <div class="relative w-full max-w-[340px] aspect-[4/5] bg-white p-3 rounded-2xl shadow-xl border border-primary-burgundy/5 rotate-2 hover:rotate-0 transition-transform duration-500">
+            <img src="https://placehold.co/400x500/7A2E39/ffffff?text=Siti+Jilbab" 
+                 alt="Siti Jilbab Premium Showcase" 
+                 class="w-full h-full object-cover rounded-xl"
+                 referrerpolicy="no-referrer" />
+            <div class="absolute -bottom-4 -left-4 bg-primary-burgundy text-white text-xs font-serif italic py-2 px-4 rounded-lg shadow-lg">
+             Siti Jilbab
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FEAURED PRODUCTS SECTION -->
+    <section id="unggulan" class="section-padding bg-white/60 reveal">
+      <div class="container flex flex-col items-center">
+        <span class="text-xs uppercase tracking-widest text-secondary-rose font-bold mb-2">✦ Pilihan Kami</span>
+        <h2 class="text-3xl sm:text-4xl text-center font-bold mb-3 text-text-charcoal">Koleksi Unggulan</h2>
+        <p class="text-stone-600 text-center text-sm sm:text-base max-w-lg mb-10">Produk hijab terfavorit dan berkualitas tinggi yang paling dicintai oleh pelanggan setia kami</p>
+        
+        <!-- Dynamic Product Grid loaded from main.js / products.json -->
+        <div id="featured-products-grid" class="w-full"></div>
+
+        <div class="mt-8">
+          <a href="./katalog.html" class="btn-primary">Lihat Semua Koleksi &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. STORE EXCELLENCE SECTION -->
+    <section id="keunggulan" class="section-padding reveal">
+      <div class="container">
+        <div class="text-center max-w-xl mx-auto mb-16">
+          <span class="text-xs uppercase tracking-widest text-[#C88EA7] font-bold mb-2 inline-block">Kenapa Memilih Kami</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-text-charcoal leading-tight">
+            Kualitas <span class="font-serif italic text-primary-burgundy font-light">Tanpa Kompromi</span>
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base mt-3">Siti Jilbab berkomitmen menyediakan hijab premium yang menutup aurat dengan sempurna sambil menjaga keanggunan alami setiap muslimah.</p>
+        </div>
+
+        <!-- Pill Category Badges List -->
+        <div class="flex flex-wrap justify-center gap-2 mb-16 max-w-3xl mx-auto">
+          <span class="bg-white border border-primary-burgundy/10 text-[#7A2E39] text-xs font-medium px-4 py-2 rounded-full shadow-sm">Voal Ultra Fine</span>
+          <span class="bg-white border border-primary-burgundy/10 text-[#7A2E39] text-xs font-medium px-4 py-2 rounded-full shadow-sm">Pashmina Ceruty</span>
+          <span class="bg-white border border-primary-burgundy/10 text-[#7A2E39] text-xs font-medium px-4 py-2 rounded-full shadow-sm">Jersey Premium</span>
+          <span class="bg-white border border-primary-burgundy/10 text-[#7A2E39] text-xs font-medium px-4 py-2 rounded-full shadow-sm">Bergo Daily</span>
+          <span class="bg-white border border-primary-burgundy/10 text-[#7A2E39] text-xs font-medium px-4 py-2 rounded-full shadow-sm">Khimar Syari</span>
+        </div>
+
+        <!-- Bento style feature highlights -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="bg-white p-8 rounded-2xl border border-primary-burgundy/5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-secondary-rose/10 flex items-center justify-center rounded-full text-secondary-rose mb-6 text-xl">🎨</div>
+            <h3 class="text-lg font-bold text-text-charcoal mb-3">Pilihan Warna Menawan</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Tersedia dalam puluhan pilihan warna eksklusif, mulai dari tone pastel lembut, warna bumi (earthy) yang teduh, hingga seri warna berkarakter kuat.
+            </p>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="bg-white p-8 rounded-2xl border border-primary-burgundy/5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary-burgundy/10 flex items-center justify-center rounded-full text-primary-burgundy mb-6 text-xl">✨</div>
+            <h3 class="text-lg font-bold text-text-charcoal mb-3">Bahan Premium Grade A</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Material pilihan terbaik dengan pengerjaan tepi kain presisi (laser cut atau jahit benang super rapat). Anti kusut, adem, dan tegak nyaman di wajah.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white p-8 rounded-2xl border border-primary-burgundy/5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[#25D366]/10 flex items-center justify-center rounded-full text-[#25D366] mb-6 text-xl font-bold">🏷️</div>
+            <h3 class="text-lg font-bold text-text-charcoal mb-3">Harga Jujur & Nyata</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Kami memutus rantai distribusi berlebih untuk menghadirkan jilbab berstandar butik dengan harga jujur yang bersahabat bagi kantong muslimah Lampung.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CTA WHATSAPP & VISIT SECTION -->
+    <section id="kontak" class="section-padding overflow-hidden reveal bg-gradient-to-br from-[#7A2E39]/5 to-[#C88EA7]/10">
+      <div class="container">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-primary-burgundy/5 max-w-4xl mx-auto flex flex-col items-center text-center gap-8">
+          <span class="text-[#25D366] text-4xl">💬</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-text-charcoal max-w-xl leading-tight">
+            Kunjungi Toko atau Diskusi Langsung via WhatsApp
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base max-w-lg -mt-2">
+            Punya pertanyaan mengenai varian warna, kesediaan stok, atau ukuran jilbab syar'i? Layanan CS kami siap melayani Anda dengan ramah dan tulus.
+          </p>
+
+          <!-- 2 Grid info card -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mt-4">
+            <a href="https://maps.google.com/?q=Pasar+Unit+2+Tulang+Bawang+Lampung" target="_blank" class="bg-bg-cream/50 p-6 rounded-xl border border-primary-burgundy/5 text-left hover:border-primary-burgundy/20 transition-colors">
+              <span class="text-primary-burgundy font-bold text-lg block mb-1">📍 Alamat Toko</span>
+              <p class="text-xs text-stone-600 leading-relaxed mb-2">Pasar Unit 2, Kecamatan Banjar Agung, Tulang Bawang, Lampung</p>
+              <span class="text-primary-burgundy text-xs font-semibold hover:underline">Lokasi Google Maps &rarr;</span>
+            </a>
+            
+            <a href="https://instagram.com/hijab_tulangbawang" target="_blank" class="bg-bg-cream/50 p-6 rounded-xl border border-primary-burgundy/5 text-left hover:border-primary-burgundy/20 transition-colors">
+              <span class="text-secondary-rose font-bold text-lg block mb-1">📸 Galeri Instagram</span>
+              <p class="text-xs text-stone-600 leading-relaxed mb-2">Lihat update daily outfit hijab, katalog diskon menarik.</p>
+              <span class="text-secondary-rose text-xs font-semibold hover:underline">Instagram @hijab_tulangbawang &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Big WhatsApp Button -->
+          <a href="https://wa.me/6282372526773?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20koleksi%20Siti%20Jilbab%20%F0%9F%99%8F" 
+             target="_blank" 
+             style="background-color: var(--wa-green); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);" 
+             class="btn-primary border-none text-white mt-4 font-bold flex items-center gap-3 py-4 px-8 text-base transition-transform hover:scale-105">
+            Tanya Stok di WhatsApp Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    <script>
+      // Execute UI layout rendering
+      renderNav('home');
+      renderFooter();
+
+      // Ensure proper Meta settings
+      setPageMeta({
+        title: 'Siti Jilbab — Toko Hijab Premium di Tulang Bawang',
+        description: 'Koleksi hijab terlengkap di Pasar Unit 2, Tulang Bawang. Voal, pashmina, jersey, bergo, dan khimar syari dengan bahan premium harga bersahabat.',
+        image: 'https://placehold.co/400x500/7A2E39/ffffff?text=Siti+Jilbab',
+        url: window.location.href
+      });
+
+      // Fetch products and render featured selections
+      fetch('./data/products.json')
+        .then(response => {
+          if (!response.ok) throw new Error('Data product load failed');
+          return response.json();
+        })
+        .then(products => {
+          // Select products with non-null badge: 'terlaris' / 'baru'
+          const featured = products.filter(p => p.badge).slice(0, 4);
+          const grid = document.getElementById('featured-products-grid');
+          if (grid) {
+            grid.className = 'product-grid';
+            grid.innerHTML = featured.map(p => renderProductCard(p)).join('');
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          const grid = document.getElementById('featured-products-grid');
+          if (grid) grid.innerHTML = `<p class="text-center text-sm py-8 text-stone-500">Gagal memuat katalog produk. Silakan refresh halaman.</p>`;
+        });
+
+      // Internal helper to render cards matching exactly with design system
+      function renderProductCard(p) {
+        const badgeHTML = p.badge 
+          ? `<span class="badge-${p.badge}">${p.badge === 'terlaris' ? '🔥 Terlaris' : '✨ Baru'}</span>` 
+          : '';
+        
+        return `
+          <div class="product-card">
+            ${badgeHTML}
+            <div class="overflow-hidden bg-stone-100">
+              <img src="${p.images[0]}" alt="${p.name} — Siti Jilbab" loading="lazy" width="400" height="500">
+            </div>
+            <div class="product-card-body">
+              <p class="product-category">${p.category}</p>
+              <h3 class="product-name font-medium">${p.name}</h3>
+              <p class="product-price font-bold">Rp ${p.price.toLocaleString('id-ID')}</p>
+              <a href="./produk/detail.html?slug=${p.slug}" class="btn-primary btn-sm text-center w-full mt-auto">Lihat Detail</a>
+            </div>
+          </div>`;
+      }
+    </script>
+  </body>
+</html>

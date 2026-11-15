@@ -1,0 +1,6 @@
+{
+  "name": "Siti Jilbab",
+  "description": "Katalog Hijab Premium di Pasar Unit 2, Tulang Bawang, Lampung - Anggun, Elegan, dan Nyaman.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

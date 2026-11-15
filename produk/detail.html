@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siti Jilbab — Detail Produk</title>
+    
+    <!-- Global CSS (using double-dot since inside subfolder /produk) -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="bg-bg-cream text-text-charcoal flex flex-col min-h-screen">
+    
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <!-- MAIN PRODUCT SPECIFICATION FRAME -->
+    <main class="flex-grow pt-32 pb-16">
+      <div class="container">
+        
+        <!-- Breadcrumb Row -->
+        <nav id="breadcrumb" class="text-xs text-stone-500 font-medium tracking-wide mb-8 py-3 px-6 bg-white rounded-xl border border-primary-burgundy/5 w-fit">
+          <!-- Populated dynamically by produk.js -->
+          Memproses rincian silsilah...
+        </nav>
+
+        <!-- Product Highlight (2 Columns desktop-first) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-start bg-white p-6 sm:p-10 rounded-3xl border border-primary-burgundy/10 shadow-sm">
+          
+          <!-- Column Left: Image Showcase Gallerier -->
+          <div id="gallery-container" class="md:col-span-6 space-y-4 w-full">
+            <!-- Rendered by produk.js -->
+          </div>
+
+          <!-- Column Right: Information and ordering details -->
+          <div id="product-info" class="md:col-span-6 space-y-6 w-full flex flex-col justify-start">
+            <!-- Rendered by produk.js -->
+          </div>
+
+        </div>
+
+        <!-- RELATED PRODUCTS SECTION -->
+        <section class="mt-20 reveal">
+          <div class="border-t border-primary-burgundy/10 pt-12">
+            <h2 id="related-title" class="text-2xl sm:text-3xl font-bold text-text-charcoal mb-8 text-center sm:text-left">Koleksi Jilbab Lainnya</h2>
+            <div id="related-products" class="product-grid">
+              <!-- Rendered by produk.js -->
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Page Specific Overrides -->
+    <style>
+      .swatch {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(43, 38, 38, 0.2);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .swatch:hover {
+        transform: scale(1.1);
+      }
+      .swatch.active {
+        transform: scale(1.15);
+        box-shadow: 0 0 0 2.5px #ffffff, 0 0 0 4px var(--burgundy);
+      }
+      .swatch-tooltip {
+        position: absolute;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--charcoal);
+        color: #ffffff;
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 100;
+      }
+      .swatch:hover .swatch-tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      #main-photo {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 20px;
+        border: 1px solid rgba(122, 46, 57, 0.08);
+        transition: opacity 0.3s ease;
+      }
+      .thumb-btn {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        transition: all 0.25s ease;
+        flex-shrink: 0;
+        background-color: var(--cream);
+      }
+      .thumb-btn img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .thumb-btn.active {
+        border-color: var(--burgundy);
+        transform: translateY(-2px);
+      }
+      .disabled-wa-btn {
+        background: #D3D3D3 !important;
+        color: #7F7F7F !important;
+        box-shadow: none !important;
+        cursor: not-allowed;
+      }
+    </style>
+
+    <!-- Global shared script (loaded first) -->
+    <script src="../assets/js/main.js"></script>
+    <!-- Page business script -->
+    <script src="../assets/js/produk.js"></script>
+  </body>
+</html>
